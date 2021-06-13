@@ -169,10 +169,13 @@ public:
         Quaternion &q = *this;
         Type angle = aa.norm();
         Vector<Type, 3> axis = aa.unit();
-        if (angle < Type(1e-10)) {
+        if (angle < Type(1e-10))
+        {
             q(0) = Type(1);
             q(1) = q(2) = q(3) = 0;
-        } else {
+        }
+        else
+        {
             Type magnitude = sin(angle / Type(2));
             q(0) = cos(angle / Type(2));
             q(1) = axis(0) * magnitude;
